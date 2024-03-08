@@ -8,8 +8,12 @@ ofstream fout("all_matrices.txt");
 using namespace std;
 
 //generate all square matrixes of size n with elements with n elements (just gonna use 1 to n for simplicity)
-void generateMatrixes(int n, int i, int ok, int number, int *matrix)
+void generateMatrixes(int n, int i, int ok, int number, int *matrix, int type)
 {
+	//if (type == 0) {
+	//	fout << n << endl;
+	//	type = 1;
+	//}
 	if (i == n * n)
 	{
 		for (int k = 0; k < n; k++)
@@ -18,7 +22,7 @@ void generateMatrixes(int n, int i, int ok, int number, int *matrix)
 			{
 				fout << matrix[k * n + l] << " ";
 			}
-			fout << endl;
+			fout << "\n";
 		}
 		fout << endl;
 		return;
@@ -26,18 +30,20 @@ void generateMatrixes(int n, int i, int ok, int number, int *matrix)
 	if (ok == 0)
 	{
 		matrix[i] = number;
-		generateMatrixes(n, i, 1, number + 1, matrix);
+		generateMatrixes(n, i, 1, number + 1, matrix, type);
 	}
 	else
 	{
 		for (int k = 1; k <= n; k++)
 		{
 			matrix[i] = k;
-			generateMatrixes(n, i + 1, 1, number, matrix);
+			generateMatrixes(n, i + 1, 1, number, matrix, type);
 		}
 	}
 }
 /*
+type - used to print the size of the matrix only once so I can read it from the file in python
+
 n - the size of the matrix
 
 i - the current position in the matrix

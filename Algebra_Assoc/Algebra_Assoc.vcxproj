@@ -134,6 +134,8 @@
   <ItemGroup>
     <Text Include="associative_matrices.txt" />
     <Text Include="all_matrices.txt" />
+    <Text Include="size.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="checkAss.h" />

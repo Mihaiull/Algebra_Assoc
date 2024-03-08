@@ -1,5 +1,5 @@
 //it's not a dirty joke, it's dirty code
-
+#include <iostream>
 //this function checks if the operation set is associative and returns a boolean value
 bool isAssociative(int n, int matrix[][5])
 {
@@ -8,12 +8,11 @@ bool isAssociative(int n, int matrix[][5])
 	{
 		for (int j = 0; j < n; j++)
 		{
-			for (int k = 0; k < n; k++)
+			for (int k = 0; k < n-1; k++)
 			{
-				int a = matrix[i][j];
-				int b = matrix[j][k];
-				if (matrix[a][k] != matrix[i][b])
+				if (matrix[matrix[i][j]][k] != matrix[i][matrix[j][k]])
 				{
+					std::cout << matrix[i][j] << " " << matrix[j][k] << " " << matrix[i][matrix[j][k]] << " " << matrix[matrix[i][j]][k] << matrix[1][k] <<"\n";
 					return false;
 				}
 			}
@@ -21,3 +20,4 @@ bool isAssociative(int n, int matrix[][5])
 	}
 	return true;
 }
+//check

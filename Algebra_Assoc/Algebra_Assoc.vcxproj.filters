@@ -32,6 +32,12 @@
     <Text Include="associative_matrices.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="size.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="generateMatrixes.h">
