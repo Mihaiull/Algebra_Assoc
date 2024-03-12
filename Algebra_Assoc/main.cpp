@@ -13,23 +13,22 @@ int main()
 	int matrix[5][5];
 	//generate all the matrixes of size n
 	generateMatrixes(n, 0, 0, 1, *matrix, 0);
-	//check if the matrixes are associative
 	//read the matrixes from the file
 	ifstream f("all_matrices.txt");
 	ofstream g("associative_matrices.txt");
-	//save the size of the matrices in a file
 	number << n;
-	for (int x = 0; x <= pow(n, n * n); x++)
+	long diana = pow(n, n * n);
+	for (int x = 0; x < diana; x++)
 	{
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < n; j++) {
 				f >> matrix[i][j];
 				//print the matrix in for testing purposes
-				//cout << matrix[i][j] << " ";
+				cout << matrix[i][j] << " ";
 			}
-			//cout << endl;
-
+			cout << endl;
+		}
 		//check associativity and print if it is
 		if (isAssociative(n, matrix))
 		{
@@ -43,8 +42,8 @@ int main()
 			}
 			g << "\n";
 		}
-		}
 	}
+//del the first matrix from associative matrices
 	
 	
 	return 0;
